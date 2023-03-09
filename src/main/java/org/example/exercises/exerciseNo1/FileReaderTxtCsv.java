@@ -17,7 +17,8 @@ public class FileReaderTxtCsv {
     public static void main(String[] args) throws IOException {
 
         List list = readFileTxt(FILE_PATH_TXT);
-        writeFileTxtToCsv(FILE_PATH_CSV,list);
+     //   writeFileTxtToCsv(FILE_PATH_CSV,list);
+        printData(list);
 
     }
     public static List<String> readFileTxt(String path) throws IOException {
@@ -44,4 +45,16 @@ public class FileReaderTxtCsv {
             e.printStackTrace();
         }
     }
+
+    public static void printData(List<String> data) {
+        String[] header = {"ID", "WORD"};
+        System.out.printf("%-10s %-10s%n", header[0], header[1]);
+        int id = 1;
+        for (String line : data) {
+            String[] row = {String.valueOf(id++), String.join(" ", line)};
+            System.out.printf("%-10s %-10s%n", row[0], row[1]);
+        }
+    }
+
+
 }
