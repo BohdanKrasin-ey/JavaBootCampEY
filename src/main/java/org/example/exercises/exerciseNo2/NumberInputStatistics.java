@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class NumberInputStatistics {
-    private static final ArrayList <Integer> numbers= new ArrayList<>();
+    private static final ArrayList<Integer> numbers = new ArrayList<>();
 
     public static void main(String[] args) {
         readInputData();
@@ -21,19 +21,23 @@ public class NumberInputStatistics {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n;
         do {
-            System.out.print("Enter a number between 1 and 1000,to exit print 0: ");
+            System.out.print("Enter a number between 1 and 1000,to exit write \"exit\": ");
             try {
-                n = Integer.parseInt(br.readLine());
+                String input = br.readLine();
+                if (input.equalsIgnoreCase("exit")) {
+                    break;
+                }
+                n = Integer.parseInt(input);
                 if (n < 1 || n > 1000) {
                     System.out.println("Invalid input. Enter a number between 1 and 1000.");
+                } else {
+                    numbers.add(n);
                 }
-                else {
-                numbers.add(n);}
             } catch (NumberFormatException | IOException e) {
                 System.out.println("Invalid input. Enter a number between 1 and 1000.");
                 n = 0;
             }
-        } while (n!=0);
+        }while (true);
     }
 
     public static void calculateDeciles() {
