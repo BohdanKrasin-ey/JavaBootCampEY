@@ -62,7 +62,7 @@ public class Solution {
             Class<?> cls = obj.getClass();
             Method[] methods = cls.getDeclaredMethods();
             for (Method method : methods) {
-                if (method.getAnnotations().length == 0 && !method.isAnnotationPresent(ScanMe.class)) {
+                if (method.getAnnotations().length == 0 && !cls.isAnnotationPresent(ScanMe.class)) {
                     System.out.println("Method name: " + method.getName()+ " from class: "+ cls.getSimpleName());
                 }
             }
