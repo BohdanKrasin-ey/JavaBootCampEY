@@ -1,10 +1,12 @@
-package org.example.exercises.mavenExercise;
+package org.example.exercises.gradleExercise;
 
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 public class Solution {
+
     private static final Logger log = LogManager.getLogger(Solution.class);
     public static void main(String[] args) {
 
